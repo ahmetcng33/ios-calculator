@@ -20,4 +20,16 @@ hesap.addEventListener("click" , (e)=>{
     }else if(e.target == document.querySelector(".esitle")){
         esitle()
     }
-})
+});
+
+function esitle() {
+    if (ust.innerHTML.slice(-1) == "÷") {
+      alt.innerHTML = (ust.innerHTML.slice(0, -1) / alt.innerHTML).toFixed(1);
+    } else if (ust.innerHTML.slice(-1) == "x") {
+      alt.innerHTML = ust.innerHTML.slice(0, -1) * alt.innerHTML;
+    } else if (ust.innerHTML.slice(-1) == "-") {
+      alt.innerHTML = ust.innerHTML.slice(0, -1) - alt.innerHTML;
+    } else if (ust.innerHTML.slice(-1) == "+") {
+      alt.innerHTML = Number(ust.innerHTML.slice(0, -1)) + Number(alt.innerHTML);
+    }
+  }
